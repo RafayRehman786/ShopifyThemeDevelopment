@@ -1,0 +1,652 @@
+{% comment %}
+  Section: Accepted Payment + Satisfaction Guarantee
+  File: accepted-icons.liquid
+  Built-in default icons: Visa, Mastercard, American Express, Apple Pay, PayPal, Klarna
+  All icons can also be replaced with uploaded images from the Theme Editor.
+{% endcomment %}
+
+<section
+  id="accepted-icons-{{ section.id }}"
+  class="accepted-icons-section"
+  style="
+    --ai-bg: {{ section.settings.bg_color }};
+    --ai-heading: {{ section.settings.heading_color }};
+    --ai-text: {{ section.settings.text_color }};
+    --ai-link: {{ section.settings.link_color }};
+    --ai-divider: {{ section.settings.divider_color }};
+    --ai-section-width: {{ section.settings.section_width }}%;
+    --ai-max-width: {{ section.settings.max_width }}px;
+    --ai-left-width: {{ section.settings.left_width }}%;
+    --ai-gap: {{ section.settings.column_gap }}px;
+    --ai-pad-top: {{ section.settings.pad_top }}px;
+    --ai-pad-bottom: {{ section.settings.pad_bottom }}px;
+    --ai-pad-x: {{ section.settings.pad_x }}px;
+    --ai-margin-top: {{ section.settings.margin_top }}px;
+    --ai-margin-bottom: {{ section.settings.margin_bottom }}px;
+    --ai-radius: {{ section.settings.radius }}px;
+    --ai-heading-size: {{ section.settings.heading_size }}px;
+    --ai-text-size: {{ section.settings.text_size }}px;
+    --ai-divider-width: {{ section.settings.divider_width }}px;
+    --ai-divider-height: {{ section.settings.divider_height }}px;
+    --ai-payment-gap: {{ section.settings.payment_gap }}px;
+  "
+>
+  <div class="accepted-icons__inner">
+    <div class="accepted-icons__row">
+
+      <div class="accepted-icons__column accepted-icons__left ai-align-{{ section.settings.left_align }} ai-mobile-{{ section.settings.left_mobile }}">
+        {% if section.settings.payment_title != blank %}
+          <h2 class="accepted-icons__heading accepted-icons__payment-heading">
+            {{ section.settings.payment_title | escape }}
+          </h2>
+        {% endif %}
+
+        <div class="accepted-icons__payments" aria-label="{{ section.settings.payment_title | escape }}">
+          {% for block in section.blocks %}
+            {% if block.type == 'payment_icon' %}
+              <div
+                class="accepted-icons__payment"
+                style="
+                  --icon-width: {{ block.settings.icon_width }}px;
+                  --icon-height: {{ block.settings.icon_height }}px;
+                "
+                {{ block.shopify_attributes }}
+              >
+                {% if block.settings.custom_image != blank %}
+                  {{
+                    block.settings.custom_image
+                    | image_url: width: 300
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '40,60,80,100,120,160,200,240,300',
+                      sizes: '100px',
+                      alt: block.settings.alt_text,
+                      class: 'accepted-icons__payment-image'
+                  }}
+                {% else %}
+                  {% case block.settings.payment_type %}
+                    {% when 'visa' %}
+                      <svg class="accepted-icons__svg-icon" viewBox="0 0 56 36" role="img" aria-label="Visa">
+                        <rect width="56" height="36" rx="6" fill="#fff"/>
+                        <text x="28" y="22.8" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" font-style="italic" fill="#1434CB">VISA</text>
+                      </svg>
+
+                    {% when 'mastercard' %}
+                      <svg class="accepted-icons__svg-icon" viewBox="0 0 56 36" role="img" aria-label="Mastercard">
+                        <rect width="56" height="36" rx="6" fill="#fff"/>
+                        <circle cx="24" cy="18" r="8.5" fill="#EB001B"/>
+                        <circle cx="32" cy="18" r="8.5" fill="#F79E1B"/>
+                        <path d="M28 11.1a8.5 8.5 0 0 1 0 13.8 8.5 8.5 0 0 1 0-13.8z" fill="#FF5F00"/>
+                      </svg>
+
+                    {% when 'amex' %}
+                      <svg class="accepted-icons__svg-icon" viewBox="0 0 56 36" role="img" aria-label="American Express">
+                        <rect width="56" height="36" rx="6" fill="#fff"/>
+                        <rect x="10" y="9" width="36" height="18" rx="3" fill="#2E77BC"/>
+                        <text x="28" y="20.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7.2" font-weight="700" fill="#fff">AMEX</text>
+                      </svg>
+
+                    {% when 'apple_pay' %}
+                      <svg class="accepted-icons__svg-icon" viewBox="0 0 56 36" role="img" aria-label="Apple Pay">
+                        <rect width="56" height="36" rx="6" fill="#fff"/>
+                        <path d="M17.6 14.2c.7-.9 1.8-1.6 2.9-1.7.1 1.1-.3 2.1-.9 2.8-.7.8-1.7 1.4-2.8 1.3-.1-1 .3-1.8.8-2.4zm4.7 7.7c-.4.9-.9 1.8-1.6 2.7-.9 1.2-1.8 2.3-3.2 2.3-1.2 0-1.6-.8-3-.8-1.4 0-1.8.8-3 .8-1.3 0-2.2-1.2-3.1-2.4-2.5-3.6-2.7-7.8-1.2-10.2 1.1-1.7 2.8-2.7 4.4-2.7 1.3 0 2.5.8 3.3.8.8 0 2.2-.9 3.7-.8.6 0 2.5.2 3.7 2-3.2 1.8-2.7 6.3 0 7.4z" transform="translate(7 0) scale(.55)" fill="#111"/>
+                        <text x="31.5" y="22.2" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="600" fill="#111">Pay</text>
+                      </svg>
+
+                    {% when 'paypal' %}
+                      <svg class="accepted-icons__svg-icon" viewBox="0 0 56 36" role="img" aria-label="PayPal">
+                        <rect width="56" height="36" rx="6" fill="#fff"/>
+                        <path d="M18 9h8.6c4.3 0 6.5 2 5.8 5.3-.8 3.9-4 5.8-8.1 5.8h-2.5L21 27h-5.2L18 9z" fill="#003087"/>
+                        <path d="M24 13h7c3.9 0 5.8 1.8 5 4.8-.8 3.2-3.4 4.8-7.1 4.8h-2.1l-.7 4.4h-4.5L24 13z" fill="#009CDE" opacity=".96"/>
+                      </svg>
+
+                    {% when 'klarna' %}
+                      <svg class="accepted-icons__svg-icon" viewBox="0 0 56 36" role="img" aria-label="Klarna">
+                        <rect width="56" height="26" rx="6" fill="#fff"/>
+                        <rect x="8" y="10" width="40" height="16" rx="5" fill="#FFB3C7"/>
+                        <text x="28" y="20.8" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7.3" font-weight="700" fill="#111">Klarna.</text>
+                      </svg>
+                  {% endcase %}
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="accepted-icons__divider" aria-hidden="true"></div>
+
+      <div class="accepted-icons__column accepted-icons__right ai-align-{{ section.settings.right_align }} ai-mobile-{{ section.settings.right_mobile }}">
+        <div class="accepted-icons__guarantee-row">
+          <div
+            class="accepted-icons__guarantee-icon"
+            style="--guarantee-size: {{ section.settings.guarantee_size }}px;"
+          >
+            {% if section.settings.guarantee_icon != blank %}
+              {{
+                section.settings.guarantee_icon
+                | image_url: width: 180
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '24,32,40,48,64,80,120,160,180',
+                  sizes: '40px',
+                  alt: section.settings.guarantee_alt,
+                  class: 'accepted-icons__guarantee-image'
+              }}
+            {% else %}
+              <svg class="accepted-icons__guarantee-svg" viewBox="0 0 64 64" role="img" aria-label="Satisfaction guarantee">
+                <path d="M32 5l5.5 4.1 6.8-1 3.1 6.1 6.4 2.6-.3 6.9 5 4.7-3.6 5.9 1.6 6.7-6.3 2.8-2.5 6.5-6.8-.6L35 59l-5.3-4.4-6.9.6-2.5-6.5-6.3-2.8 1.6-6.7-3.6-5.9 5-4.7-.3-6.9 6.4-2.6 3.1-6.1 6.8 1L32 5z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                <path d="M23 32.5l6 6 12-14" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            {% endif %}
+          </div>
+
+          {% if section.settings.guarantee_title != blank %}
+            <h2 class="accepted-icons__heading accepted-icons__guarantee-heading">
+              {{ section.settings.guarantee_title | escape }}
+            </h2>
+          {% endif %}
+        </div>
+
+        {% if section.settings.body_text != blank %}
+          <div class="accepted-icons__body rte">
+            {{ section.settings.body_text }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.link_1_label != blank or section.settings.link_2_label != blank %}
+          <div class="accepted-icons__links">
+            {% if section.settings.link_prefix != blank %}
+              <span>{{ section.settings.link_prefix | escape }}</span>
+            {% endif %}
+
+            {% if section.settings.link_1_label != blank %}
+              {% if section.settings.link_1_url != blank %}
+                <a href="{{ section.settings.link_1_url }}">{{ section.settings.link_1_label | escape }}</a>
+              {% else %}
+                <span>{{ section.settings.link_1_label | escape }}</span>
+              {% endif %}
+            {% endif %}
+
+            {% if section.settings.link_separator != blank and section.settings.link_1_label != blank and section.settings.link_2_label != blank %}
+              <span>{{ section.settings.link_separator | escape }}</span>
+            {% endif %}
+
+            {% if section.settings.link_2_label != blank %}
+              {% if section.settings.link_2_url != blank %}
+                <a href="{{ section.settings.link_2_url }}">{{ section.settings.link_2_label | escape }}</a>
+              {% else %}
+                <span>{{ section.settings.link_2_label | escape }}</span>
+              {% endif %}
+            {% endif %}
+
+            {% if section.settings.link_suffix != blank %}
+              <span>{{ section.settings.link_suffix | escape }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% style %}
+  #accepted-icons-{{ section.id }},
+  #accepted-icons-{{ section.id }} * {
+    box-sizing: border-box;
+  }
+
+  #accepted-icons-{{ section.id }} {
+    width: 100%;
+    margin-top: var(--ai-margin-top);
+    margin-bottom: var(--ai-margin-bottom);
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__inner {
+    width: var(--ai-section-width);
+    max-width: var(--ai-max-width);
+    margin: 0 auto;
+    padding: var(--ai-pad-top) var(--ai-pad-x) var(--ai-pad-bottom);
+    background: var(--ai-bg);
+    border-radius: var(--ai-radius);
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: var(--ai-gap) !important;
+    width: 100% !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__column {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__left {
+    flex: 0 1 var(--ai-left-width) !important;
+    width: var(--ai-left-width) !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__right {
+    flex: 1 1 0 !important;
+    width: auto !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__divider {
+    display: block !important;
+    flex: 0 0 var(--ai-divider-width) !important;
+    width: var(--ai-divider-width) !important;
+    height: var(--ai-divider-height) !important;
+    min-height: 0 !important;
+    background: var(--ai-divider) !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__heading {
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: var(--ai-heading) !important;
+    font-size: var(--ai-heading-size) !important;
+    line-height: {{ section.settings.heading_line }} !important;
+    font-weight: {{ section.settings.heading_weight }} !important;
+    letter-spacing: {{ section.settings.heading_spacing }}px !important;
+    text-transform: none !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    writing-mode: horizontal-tb !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__payment-heading {
+    margin-bottom: {{ section.settings.title_gap }}px !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__payments {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: var(--ai-payment-gap) !important;
+    width: 100% !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__payment {
+    flex: 0 0 auto !important;
+    width: var(--icon-width) !important;
+    height: var(--icon-height) !important;
+    line-height: 0 !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__payment-image,
+  #accepted-icons-{{ section.id }} .accepted-icons__svg-icon {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__guarantee-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: {{ section.settings.guarantee_gap }}px !important;
+    width: 100% !important;
+    margin-bottom: {{ section.settings.guarantee_bottom }}px !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__guarantee-icon {
+    flex: 0 0 var(--guarantee-size) !important;
+    width: var(--guarantee-size) !important;
+    min-width: var(--guarantee-size) !important;
+    color: {{ section.settings.guarantee_icon_color }} !important;
+    line-height: 0 !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__guarantee-image,
+  #accepted-icons-{{ section.id }} .accepted-icons__guarantee-svg {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__body,
+  #accepted-icons-{{ section.id }} .accepted-icons__links {
+    width: 100% !important;
+    max-width: 100% !important;
+    color: var(--ai-text) !important;
+    font-size: var(--ai-text-size) !important;
+    line-height: {{ section.settings.text_line }} !important;
+    font-weight: {{ section.settings.text_weight }} !important;
+    letter-spacing: {{ section.settings.text_spacing }}px !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    writing-mode: horizontal-tb !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__body p {
+    margin: 0 !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__links {
+    margin-top: {{ section.settings.links_gap }}px !important;
+  }
+
+  #accepted-icons-{{ section.id }} .accepted-icons__links a {
+    color: var(--ai-link) !important;
+    text-decoration: {% if section.settings.underline_links %}underline{% else %}none{% endif %} !important;
+    text-underline-offset: 2px;
+  }
+
+  #accepted-icons-{{ section.id }} .ai-align-left {
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
+  #accepted-icons-{{ section.id }} .ai-align-center {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  #accepted-icons-{{ section.id }} .ai-align-right {
+    text-align: right !important;
+    align-items: flex-end !important;
+  }
+
+  #accepted-icons-{{ section.id }} .ai-align-left .accepted-icons__payments,
+  #accepted-icons-{{ section.id }} .ai-align-left .accepted-icons__guarantee-row {
+    justify-content: flex-start !important;
+  }
+
+  #accepted-icons-{{ section.id }} .ai-align-center .accepted-icons__payments,
+  #accepted-icons-{{ section.id }} .ai-align-center .accepted-icons__guarantee-row {
+    justify-content: center !important;
+  }
+
+  #accepted-icons-{{ section.id }} .ai-align-right .accepted-icons__payments,
+  #accepted-icons-{{ section.id }} .ai-align-right .accepted-icons__guarantee-row {
+    justify-content: flex-end !important;
+  }
+
+  @media screen and (max-width: 749px) {
+    #accepted-icons-{{ section.id }} .accepted-icons__inner {
+      width: {{ section.settings.mobile_width }}%;
+      padding:
+        {{ section.settings.mobile_pad_top }}px
+        {{ section.settings.mobile_pad_x }}px
+        {{ section.settings.mobile_pad_bottom }}px;
+    }
+
+    #accepted-icons-{{ section.id }} .accepted-icons__row {
+      flex-direction: column !important;
+      gap: {{ section.settings.mobile_gap }}px !important;
+    }
+
+    #accepted-icons-{{ section.id }} .accepted-icons__left,
+    #accepted-icons-{{ section.id }} .accepted-icons__right {
+      width: 100% !important;
+      flex: 0 0 auto !important;
+    }
+
+    #accepted-icons-{{ section.id }} .accepted-icons__divider {
+      width: {{ section.settings.mob_divider_width }}% !important;
+      height: {{ section.settings.mob_divider_size }}px !important;
+      flex: 0 0 auto !important;
+    }
+
+    #accepted-icons-{{ section.id }} .accepted-icons__heading {
+      font-size: {{ section.settings.mob_heading_size }}px !important;
+    }
+
+    #accepted-icons-{{ section.id }} .accepted-icons__body,
+    #accepted-icons-{{ section.id }} .accepted-icons__links {
+      font-size: {{ section.settings.mob_text_size }}px !important;
+    }
+
+    #accepted-icons-{{ section.id }} .accepted-icons__payment {
+      transform: scale({{ section.settings.mobile_icon_scale | times: 0.01 }});
+      transform-origin: center;
+    }
+
+    #accepted-icons-{{ section.id }} .accepted-icons__guarantee-icon {
+      flex-basis: {{ section.settings.mob_guarantee_size }}px !important;
+      width: {{ section.settings.mob_guarantee_size }}px !important;
+      min-width: {{ section.settings.mob_guarantee_size }}px !important;
+    }
+
+    #accepted-icons-{{ section.id }} .ai-mobile-left {
+      text-align: left !important;
+      align-items: flex-start !important;
+    }
+
+    #accepted-icons-{{ section.id }} .ai-mobile-center {
+      text-align: center !important;
+      align-items: center !important;
+    }
+
+    #accepted-icons-{{ section.id }} .ai-mobile-right {
+      text-align: right !important;
+      align-items: flex-end !important;
+    }
+
+    #accepted-icons-{{ section.id }} .ai-mobile-left .accepted-icons__payments,
+    #accepted-icons-{{ section.id }} .ai-mobile-left .accepted-icons__guarantee-row {
+      justify-content: flex-start !important;
+    }
+
+    #accepted-icons-{{ section.id }} .ai-mobile-center .accepted-icons__payments,
+    #accepted-icons-{{ section.id }} .ai-mobile-center .accepted-icons__guarantee-row {
+      justify-content: center !important;
+    }
+
+    #accepted-icons-{{ section.id }} .ai-mobile-right .accepted-icons__payments,
+    #accepted-icons-{{ section.id }} .ai-mobile-right .accepted-icons__guarantee-row {
+      justify-content: flex-end !important;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Payment Guarantee",
+  "tag": "section",
+  "class": "section-accepted-icons",
+  "settings": [
+    { "type": "header", "content": "Section layout" },
+    { "type": "range", "id": "section_width", "label": "Section width", "min": 70, "max": 100, "step": 1, "unit": "%", "default": 100 },
+    { "type": "range", "id": "max_width", "label": "Maximum width", "min": 900, "max": 2000, "step": 20, "unit": "px", "default": 1600 },
+    { "type": "range", "id": "left_width", "label": "Left column width", "min": 35, "max": 60, "step": 1, "unit": "%", "default": 50 },
+    { "type": "range", "id": "column_gap", "label": "Column gap", "min": 10, "max": 70, "step": 2, "unit": "px", "default": 28 },
+    { "type": "range", "id": "pad_top", "label": "Padding top", "min": 0, "max": 100, "step": 2, "unit": "px", "default": 28 },
+    { "type": "range", "id": "pad_bottom", "label": "Padding bottom", "min": 0, "max": 100, "step": 2, "unit": "px", "default": 28 },
+    { "type": "range", "id": "pad_x", "label": "Horizontal padding", "min": 0, "max": 140, "step": 2, "unit": "px", "default": 64 },
+    { "type": "range", "id": "margin_top", "label": "Margin top", "min": 0, "max": 100, "step": 2, "unit": "px", "default": 0 },
+    { "type": "range", "id": "margin_bottom", "label": "Margin bottom", "min": 0, "max": 100, "step": 2, "unit": "px", "default": 0 },
+    { "type": "range", "id": "radius", "label": "Corner radius", "min": 0, "max": 30, "step": 1, "unit": "px", "default": 0 },
+
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#FFFFFF" },
+    { "type": "color", "id": "heading_color", "label": "Heading color", "default": "#111111" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#999999" },
+    { "type": "color", "id": "link_color", "label": "Link color", "default": "#777777" },
+
+    { "type": "header", "content": "Accepted payment" },
+    { "type": "text", "id": "payment_title", "label": "Heading", "default": "Accepted Payment" },
+    {
+      "type": "select",
+      "id": "left_align",
+      "label": "Desktop alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "left_mobile",
+      "label": "Mobile alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    { "type": "range", "id": "title_gap", "label": "Heading bottom space", "min": 0, "max": 40, "step": 1, "unit": "px", "default": 14 },
+    { "type": "range", "id": "payment_gap", "label": "Payment icon gap", "min": 0, "max": 24, "step": 1, "unit": "px", "default": 8 },
+
+    { "type": "header", "content": "Heading typography" },
+    { "type": "range", "id": "heading_size", "label": "Desktop heading size", "min": 12, "max": 34, "step": 1, "unit": "px", "default": 16 },
+    { "type": "range", "id": "mob_heading_size", "label": "Mobile heading size", "min": 12, "max": 30, "step": 1, "unit": "px", "default": 16 },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Heading weight",
+      "options": [
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi bold" },
+        { "value": "700", "label": "Bold" },
+        { "value": "800", "label": "Extra bold" }
+      ],
+      "default": "700"
+    },
+    { "type": "range", "id": "heading_line", "label": "Heading line height", "min": 1, "max": 2, "step": 0.1, "default": 1.2 },
+    { "type": "range", "id": "heading_spacing", "label": "Heading letter space", "min": -1, "max": 2, "step": 0.1, "unit": "px", "default": 0 },
+
+    { "type": "header", "content": "Middle divider" },
+    { "type": "color", "id": "divider_color", "label": "Divider color", "default": "#D5D5D5" },
+    { "type": "range", "id": "divider_width", "label": "Divider width", "min": 1, "max": 6, "step": 1, "unit": "px", "default": 1 },
+    { "type": "range", "id": "divider_height", "label": "Divider height", "min": 50, "max": 180, "step": 5, "unit": "px", "default": 110 },
+
+    { "type": "header", "content": "Guarantee heading" },
+    { "type": "image_picker", "id": "guarantee_icon", "label": "Custom guarantee icon" },
+    { "type": "text", "id": "guarantee_alt", "label": "Icon alt text", "default": "Satisfaction guarantee" },
+    { "type": "color", "id": "guarantee_icon_color", "label": "Default icon color", "default": "#111111" },
+    { "type": "range", "id": "guarantee_size", "label": "Desktop icon size", "min": 14, "max": 60, "step": 1, "unit": "px", "default": 24 },
+    { "type": "range", "id": "mob_guarantee_size", "label": "Mobile icon size", "min": 14, "max": 60, "step": 1, "unit": "px", "default": 24 },
+    { "type": "range", "id": "guarantee_gap", "label": "Icon and heading gap", "min": 0, "max": 24, "step": 1, "unit": "px", "default": 7 },
+    { "type": "text", "id": "guarantee_title", "label": "Heading", "default": "100% Satisfaction Guaranteed" },
+    {
+      "type": "select",
+      "id": "right_align",
+      "label": "Desktop alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "right_mobile",
+      "label": "Mobile alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    { "type": "range", "id": "guarantee_bottom", "label": "Heading bottom space", "min": 0, "max": 40, "step": 1, "unit": "px", "default": 16 },
+
+    { "type": "header", "content": "Description" },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Text",
+      "default": "<p>CASETiFY offers<br>“10-day No Questions Asked” return or exchange program<br>and a 6-month Product Warranty on select products.</p>"
+    },
+    { "type": "range", "id": "text_size", "label": "Desktop text size", "min": 9, "max": 24, "step": 1, "unit": "px", "default": 12 },
+    { "type": "range", "id": "mob_text_size", "label": "Mobile text size", "min": 9, "max": 22, "step": 1, "unit": "px", "default": 12 },
+    {
+      "type": "select",
+      "id": "text_weight",
+      "label": "Text weight",
+      "options": [
+        { "value": "300", "label": "Light" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi bold" }
+      ],
+      "default": "400"
+    },
+    { "type": "range", "id": "text_line", "label": "Text line height", "min": 1, "max": 2, "step": 0.1, "default": 1.4 },
+    { "type": "range", "id": "text_spacing", "label": "Text letter space", "min": -1, "max": 2, "step": 0.1, "unit": "px", "default": 0 },
+
+    { "type": "header", "content": "Links" },
+    { "type": "text", "id": "link_prefix", "label": "Text before links" },
+    { "type": "text", "id": "link_1_label", "label": "First link label", "default": "Contact us" },
+    { "type": "url", "id": "link_1_url", "label": "First link URL" },
+    { "type": "text", "id": "link_separator", "label": "Between links", "default": " or " },
+    { "type": "text", "id": "link_2_label", "label": "Second link label", "default": "learn more about our Protection Plan" },
+    { "type": "url", "id": "link_2_url", "label": "Second link URL" },
+    { "type": "text", "id": "link_suffix", "label": "Text after links", "default": "." },
+    { "type": "checkbox", "id": "underline_links", "label": "Underline links", "default": true },
+    { "type": "range", "id": "links_gap", "label": "Links top space", "min": 0, "max": 30, "step": 1, "unit": "px", "default": 0 },
+
+    { "type": "header", "content": "Mobile" },
+    { "type": "range", "id": "mobile_width", "label": "Mobile width", "min": 90, "max": 100, "step": 1, "unit": "%", "default": 100 },
+    { "type": "range", "id": "mobile_pad_top", "label": "Mobile padding top", "min": 0, "max": 60, "step": 2, "unit": "px", "default": 24 },
+    { "type": "range", "id": "mobile_pad_bottom", "label": "Mobile padding bottom", "min": 0, "max": 60, "step": 2, "unit": "px", "default": 24 },
+    { "type": "range", "id": "mobile_pad_x", "label": "Mobile side padding", "min": 0, "max": 40, "step": 2, "unit": "px", "default": 18 },
+    { "type": "range", "id": "mobile_gap", "label": "Mobile section gap", "min": 10, "max": 50, "step": 2, "unit": "px", "default": 24 },
+    { "type": "range", "id": "mob_divider_width", "label": "Mobile divider width", "min": 30, "max": 100, "step": 5, "unit": "%", "default": 70 },
+    { "type": "range", "id": "mob_divider_size", "label": "Mobile divider size", "min": 1, "max": 5, "step": 1, "unit": "px", "default": 1 },
+    { "type": "range", "id": "mobile_icon_scale", "label": "Mobile icon scale", "min": 70, "max": 110, "step": 5, "unit": "%", "default": 90 }
+  ],
+  "blocks": [
+    {
+      "type": "payment_icon",
+      "name": "Payment icon",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "select",
+          "id": "payment_type",
+          "label": "Default payment icon",
+          "options": [
+            { "value": "visa", "label": "Visa" },
+            { "value": "mastercard", "label": "Mastercard" },
+            { "value": "amex", "label": "American Express" },
+            { "value": "apple_pay", "label": "Apple Pay" },
+            { "value": "paypal", "label": "PayPal" },
+            { "value": "klarna", "label": "Klarna" }
+          ],
+          "default": "visa"
+        },
+        { "type": "image_picker", "id": "custom_image", "label": "Custom icon image" },
+        { "type": "text", "id": "alt_text", "label": "Alt text", "default": "Payment method" },
+        { "type": "range", "id": "icon_width", "label": "Icon width", "min": 28, "max": 100, "step": 2, "unit": "px", "default": 42 },
+        { "type": "range", "id": "icon_height", "label": "Icon height", "min": 20, "max": 60, "step": 2, "unit": "px", "default": 30 }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Payment Guarantee",
+      "blocks": [
+        { "type": "payment_icon", "settings": { "payment_type": "visa", "alt_text": "Visa" } },
+        { "type": "payment_icon", "settings": { "payment_type": "mastercard", "alt_text": "Mastercard" } },
+        { "type": "payment_icon", "settings": { "payment_type": "amex", "alt_text": "American Express" } },
+        { "type": "payment_icon", "settings": { "payment_type": "apple_pay", "alt_text": "Apple Pay" } },
+        { "type": "payment_icon", "settings": { "payment_type": "paypal", "alt_text": "PayPal" } },
+        { "type": "payment_icon", "settings": { "payment_type": "klarna", "alt_text": "Klarna" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

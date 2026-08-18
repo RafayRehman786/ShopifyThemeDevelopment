@@ -1,0 +1,308 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "6a3bb789-ce10-45f5-ae67-e2063ef8c76b": {
+      "type": "image-banner",
+      "blocks": {
+        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Generated test data",
+            "heading_size": "h1"
+          }
+        },
+        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-1": {
+          "type": "text",
+          "settings": {
+            "text": "A theme and populated test store by Shopify to help you test commerce primitives.",
+            "text_style": "body"
+          }
+        },
+        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-2": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop products",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-0",
+        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-1",
+        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-2"
+      ],
+      "custom_css": [],
+      "settings": {
+        "image": "shopify://shop_images/theme_cover_image.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-left",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>Featured products</strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "automated-collection",
+        "products_to_show": 10,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "f1552b18-6017-4231-810d-74e61da22c37": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stay hydrated",
+            "heading_size": "h1"
+          }
+        },
+        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Try our wax subscription so you can fly high, but never dry.</p>",
+            "text_style": "body"
+          }
+        },
+        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get waxy now",
+            "button_link": "shopify://products/selling-plans-ski-wax"
+          }
+        }
+      },
+      "block_order": [
+        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-0",
+        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-1",
+        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-2"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/theme_cover_image.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "accent-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "38cdf60f-e431-43b5-aac3-7e6215447d67": {
+      "type": "collection-list",
+      "blocks": {
+        "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hydrogen"
+          }
+        },
+        "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "automated-collection"
+          }
+        }
+      },
+      "block_order": [
+        "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-0",
+        "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-1"
+      ],
+      "settings": {
+        "title": "<strong>Collections</strong>",
+        "heading_size": "h1",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "color_scheme": "background-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "accepted_icons_ztVVkJ": {
+      "type": "accepted-icons",
+      "blocks": {
+        "payment_icon_FgxtqX": {
+          "type": "payment_icon",
+          "settings": {
+            "payment_type": "visa",
+            "custom_image": "shopify://shop_images/Untitled_design.png",
+            "alt_text": "Payment method",
+            "icon_width": 58,
+            "icon_height": 46
+          }
+        },
+        "payment_icon_tCRaFR": {
+          "type": "payment_icon",
+          "settings": {
+            "payment_type": "mastercard",
+            "alt_text": "Payment method",
+            "icon_width": 58,
+            "icon_height": 46
+          }
+        },
+        "payment_icon_YiYJkN": {
+          "type": "payment_icon",
+          "settings": {
+            "payment_type": "amex",
+            "custom_image": "shopify://shop_images/re2.png",
+            "alt_text": "Payment method",
+            "icon_width": 58,
+            "icon_height": 46
+          }
+        },
+        "payment_icon_NU8qGa": {
+          "type": "payment_icon",
+          "settings": {
+            "payment_type": "apple_pay",
+            "custom_image": "shopify://shop_images/Untitled_design_2.png",
+            "alt_text": "Payment method",
+            "icon_width": 58,
+            "icon_height": 46
+          }
+        },
+        "payment_icon_dVH7e4": {
+          "type": "payment_icon",
+          "settings": {
+            "payment_type": "paypal",
+            "custom_image": "shopify://shop_images/Untitled_design__6_-removebg-preview.png",
+            "alt_text": "Payment method",
+            "icon_width": 58,
+            "icon_height": 46
+          }
+        },
+        "payment_icon_gaM3AG": {
+          "type": "payment_icon",
+          "settings": {
+            "payment_type": "klarna",
+            "alt_text": "Payment method",
+            "icon_width": 58,
+            "icon_height": 48
+          }
+        }
+      },
+      "block_order": [
+        "payment_icon_FgxtqX",
+        "payment_icon_tCRaFR",
+        "payment_icon_YiYJkN",
+        "payment_icon_NU8qGa",
+        "payment_icon_dVH7e4",
+        "payment_icon_gaM3AG"
+      ],
+      "name": "Payment + Guarantee",
+      "settings": {
+        "section_width": 100,
+        "max_width": 1600,
+        "left_width": 50,
+        "column_gap": 28,
+        "pad_top": 28,
+        "pad_bottom": 28,
+        "pad_x": 64,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "radius": 0,
+        "bg_color": "#ffffff",
+        "heading_color": "#101010",
+        "text_color": "#999999",
+        "link_color": "#777777",
+        "payment_title": "Accepted Payment",
+        "left_align": "center",
+        "left_mobile": "center",
+        "title_gap": 14,
+        "payment_gap": 8,
+        "heading_size": 16,
+        "mob_heading_size": 16,
+        "heading_weight": "700",
+        "heading_line": 1.2,
+        "heading_spacing": 0,
+        "divider_color": "#d8d8d8",
+        "divider_width": 1,
+        "divider_height": 80,
+        "guarantee_icon": "shopify://shop_images/Untitled_design_5.png",
+        "guarantee_alt": "Satisfaction guarantee",
+        "guarantee_icon_color": "#111111",
+        "guarantee_size": 30,
+        "mob_guarantee_size": 24,
+        "guarantee_gap": 7,
+        "guarantee_title": "100% Satisfaction Guaranteed",
+        "right_align": "center",
+        "right_mobile": "center",
+        "guarantee_bottom": 16,
+        "body_text": "<p>CASETiFY offers<br/>“10-day No Questions Asked” return or exchange program<br/>and a 6-month Product Warranty on select products.</p>",
+        "text_size": 12,
+        "mob_text_size": 12,
+        "text_weight": "400",
+        "text_line": 1.4,
+        "text_spacing": 0,
+        "link_prefix": "",
+        "link_1_label": "Contact us",
+        "link_1_url": "#",
+        "link_separator": "or",
+        "link_2_label": "learn more about our Protection Plan",
+        "link_2_url": "#",
+        "link_suffix": ".",
+        "underline_links": true,
+        "links_gap": 0,
+        "mobile_width": 100,
+        "mobile_pad_top": 24,
+        "mobile_pad_bottom": 24,
+        "mobile_pad_x": 18,
+        "mobile_gap": 24,
+        "mob_divider_width": 70,
+        "mob_divider_size": 1,
+        "mobile_icon_scale": 90
+      }
+    }
+  },
+  "order": [
+    "6a3bb789-ce10-45f5-ae67-e2063ef8c76b",
+    "featured_collection",
+    "f1552b18-6017-4231-810d-74e61da22c37",
+    "38cdf60f-e431-43b5-aac3-7e6215447d67",
+    "accepted_icons_ztVVkJ"
+  ]
+}
