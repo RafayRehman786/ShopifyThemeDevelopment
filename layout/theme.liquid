@@ -256,8 +256,10 @@
     {% sections 'header-group' %}
 <pre>
 
-{}
-
+{%if request.design_mode %}
+Here Customizer Open 
+{%else %}
+{%endif%}
 </pre>
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
