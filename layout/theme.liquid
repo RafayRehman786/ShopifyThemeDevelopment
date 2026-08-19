@@ -255,6 +255,12 @@
 
     {% sections 'header-group' %}
 <h3> Hallo This is development </h3>
+{% raw %}
+  {{ product.title }}
+  {% if product.available %}
+    Product is available
+  {% endif %}
+{% endraw %}
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
