@@ -256,7 +256,13 @@
     {% sections 'header-group' %}
 <h3> Hallo This is development </h3>
 
-  {shopify-design-mode
+  {%if 'shopify-design-mode'%}
+    <h3>customization mode</h3>
+
+  {% else %}
+    <h3>preview mode</h3>
+  {% endif %}
+
 {% comment %} {% raw %}
   {{ product.title }}
   {% if product.available %}
