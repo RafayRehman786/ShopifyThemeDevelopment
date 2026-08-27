@@ -255,12 +255,14 @@
 
     {% sections 'header-group' %}
 <h3> Hallo This is development </h3>
-{% raw %}
+
+shopify-design-mode
+{% comment %} {% raw %}
   {{ product.title }}
   {% if product.available %}
     Product is available
   {% endif %}
-{% endraw %}
+{% endraw %} {% endcomment %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
