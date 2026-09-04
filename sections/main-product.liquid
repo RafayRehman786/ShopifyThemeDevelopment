@@ -89,10 +89,11 @@
                 </a>
               </div>
               {%when 'material' %}
-                if 
+              {%if product.metafields.custom.material %}
                 <div>
                   <p><strong>Material:{{product.metafields.custom.material}}</p>
                 </div>
+              {% endif %}
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
