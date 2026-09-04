@@ -163,6 +163,13 @@
         "padding_bottom": 36
       }
     },
+    "heading_4RVDLx": {
+      "type": "heading",
+      "name": "Heading",
+      "settings": {
+        "heading_text": "Hello world"
+      }
+    },
     "accepted_icons_ztVVkJ": {
       "type": "accepted-icons",
       "blocks": {
@@ -303,6 +310,7 @@
     "featured_collection",
     "f1552b18-6017-4231-810d-74e61da22c37",
     "38cdf60f-e431-43b5-aac3-7e6215447d67",
+    "heading_4RVDLx",
     "accepted_icons_ztVVkJ"
   ]
 }
