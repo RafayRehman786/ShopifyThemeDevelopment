@@ -16,6 +16,10 @@
           "type": "title",
           "settings": {}
         },
+        "material_Ajmncf": {
+          "type": "material",
+          "settings": {}
+        },
         "vendor": {
           "type": "text",
           "settings": {
@@ -59,6 +63,7 @@
       },
       "block_order": [
         "title",
+        "material_Ajmncf",
         "vendor",
         "variant_picker",
         "quantity_selector",
