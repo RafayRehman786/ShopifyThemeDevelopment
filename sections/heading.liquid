@@ -1,7 +1,9 @@
 <h1>{{ section.settings.heading_text }}</h1>
 
 
-{}
+{% for block in section.blocks %}
+    <h3>{{ block.type }}</h3>
+{% endfor %}
 {% style %}
   h1 {
     background-color: {{ section.settings.background_color }};
