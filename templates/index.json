@@ -165,9 +165,24 @@
     },
     "heading_4RVDLx": {
       "type": "heading",
+      "blocks": {
+        "title_6ApM3J": {
+          "type": "title",
+          "settings": {
+            "title_text": "Hello world",
+            "title_color": "#db4444",
+            "title_background_color": "#9c9c9c"
+          }
+        }
+      },
+      "block_order": [
+        "title_6ApM3J"
+      ],
       "name": "Heading",
       "settings": {
-        "heading_text": "Hello world"
+        "heading_text": "Hello world",
+        "heading_color": "#db4444",
+        "background_color": "#9c9c9c"
       }
     },
     "accepted_icons_ztVVkJ": {
