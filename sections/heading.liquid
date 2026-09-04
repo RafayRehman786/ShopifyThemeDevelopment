@@ -1,9 +1,14 @@
 <h1>{{ section.settings.heading_text }}</h1>
 
-
+<div style="text-align: {{ section.settings.text_alignment }};">
 {% for block in section.blocks %}
-    <h3>{{ block.type }}</h3>
+    {% case block.type %}
+        {% when "title" %}
+
+    <h3>{{ block.settings.title_text }}</h3>
+{% endcase %}
 {% endfor %}
+</div>
 {% style %}
   h1 {
     background-color: {{ section.settings.background_color }};
@@ -55,32 +60,21 @@
      {
         "type": "select",
         "id": "text_alignment",
-        "label": "Heading Size",
-        "default": "h1",
+        "label": "Text Alignment",
+        "default": "center",
+        "info": "align text to the left, center, or right",
         "options": [
           {
-            "value": "h1",
-            "label": "H1"
+            "value": "left",
+            "label": "Left"
           },
           {
-            "value": "h2",
-            "label": "H2"
+            "value": "center",
+            "label": "Center"
           },
           {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "h4",
-            "label": "H4"
-          },
-          {
-            "value": "h5",
-            "label": "H5"
-          },
-          {
-            "value": "h6",
-            "label": "H6"
+            "value": "right",
+            "label": "Right"
           }
         ]
     
@@ -116,19 +110,7 @@
                 "label": "Title Text",
                 "default": "Hello world"
             },
-                {
-        "type": "color",
-       "id": "title_color",
-        "label": "Title Color",
-        "default": "#db4444"
-    
-    },   {
-        "type": "color",
-       "id": "title_background_color",
-        "label": "Title Background Color",
-        "default": "#9c9c9c"
-    
-    }
+              
         ]
     
     }
