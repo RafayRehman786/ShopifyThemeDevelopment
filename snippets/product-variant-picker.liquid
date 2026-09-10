@@ -68,9 +68,9 @@
   {%- endif -%}
 {%- endunless -%}
 <div id="estimate-delivery-date" class="delivery-date">
- {%if product.selected_or_first_available_variant.metafields.custom.delivery_date!=blank  %}
+ {% comment %} {%if product.selected_or_first_available_variant.metafields.custom.delivery_date!=blank  %} {% endcomment %}
 <p>Estimate delivery date:{{ product.selected_or_first_available_variant.metafields.custom.delivery_date }}</p>
-{% endif  %}
+{% comment %} {% endif  %} {% endcomment %}
 </div>
 {% comment %} <noscript class="product-form__noscript-wrapper-{{ section.id }}">
   <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
