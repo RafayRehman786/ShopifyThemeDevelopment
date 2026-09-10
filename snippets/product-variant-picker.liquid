@@ -67,6 +67,7 @@
     </variant-selects>
   {%- endif -%}
 {%- endunless -%}
+<p>{{ product.selected_or_first_available_variant.metafields.custom.delivery_date }}</p>
 
 <noscript class="product-form__noscript-wrapper-{{ section.id }}">
   <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
