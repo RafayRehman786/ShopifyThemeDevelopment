@@ -67,7 +67,7 @@
     </variant-selects>
   {%- endif -%}
 {%- endunless -%}
-<div id="delivery-date-{{ section.id }}" class="delivery-date">
+<div id="estimate-delivery-date" class="delivery-date">
  {%if product.selected_or_first_available_variant.metafields.custom.delivery_date!=blank  %}
 <p>Estimate delivery date:{{ product.selected_or_first_available_variant.metafields.custom.delivery_date }}</p>
 {% endif  %}
