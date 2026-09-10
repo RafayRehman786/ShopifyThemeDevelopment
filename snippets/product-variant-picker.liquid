@@ -70,6 +70,10 @@
 <div id="estimate-delivery-date" class="delivery-date">
  {% comment %} {%if product.selected_or_first_available_variant.metafields.custom.delivery_date!=blank  %} {% endcomment %}
 <p>Estimate delivery date:{{ product.selected_or_first_available_variant.metafields.custom.delivery_date }}</p>
+<p>
+  Estimate delivery date:
+  {{ product.metafields.custom.delivery_date.value }}
+</p>
 {% comment %} {% endif  %} {% endcomment %}
 </div>
 {% comment %} <noscript class="product-form__noscript-wrapper-{{ section.id }}">
